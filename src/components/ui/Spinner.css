@@ -1,0 +1,17 @@
+.spinner-ring {
+  border-radius: 50%;
+  border-style: solid;
+  border-color: var(--color-border) var(--color-border) var(--color-border) var(--color-accent);
+  animation: spin 0.7s linear infinite;
+}
+
+.spinner-wrap--sm .spinner-ring { width: 16px; height: 16px; border-width: 2px; }
+.spinner-wrap--md .spinner-ring { width: 24px; height: 24px; border-width: 2.5px; }
+.spinner-wrap--lg .spinner-ring { width: 40px; height: 40px; border-width: 3px; }
+
+.page-spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+}

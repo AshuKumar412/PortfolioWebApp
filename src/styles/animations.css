@@ -1,0 +1,121 @@
+/* ================================================
+   Keyframe Animations
+   ================================================ */
+
+/* Fade in */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Slide up */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Slide down */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Scale in */
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Spin */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Pulse glow */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.05); }
+}
+
+/* Float */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-10px); }
+}
+
+/* Shimmer (skeleton loading) */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+/* Blink cursor */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* Orb float — hero background decoration */
+@keyframes orbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(20px, -20px) scale(1.05); }
+  66%       { transform: translate(-15px, 15px) scale(0.97); }
+}
+
+/* Progress bar fill */
+@keyframes progressFill {
+  from { width: 0; }
+  to   { width: var(--progress-width, 100%); }
+}
+
+/* Toast slide in */
+@keyframes toastIn {
+  from { opacity: 0; transform: translateX(calc(100% + 1rem)); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes toastOut {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(calc(100% + 1rem)); }
+}
+
+/* --- Utility animation classes --- */
+.animate-fade-in    { animation: fadeIn   0.4s ease forwards; }
+.animate-slide-up   { animation: slideUp  0.4s ease forwards; }
+.animate-scale-in   { animation: scaleIn  0.25s ease forwards; }
+.animate-float      { animation: float    3s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulseGlow 2s ease-in-out infinite; }
+
+/* Stagger children animations */
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(16px);
+}
+.stagger-children.revealed > *:nth-child(1) { animation: slideUp 0.45s 0.05s ease forwards; }
+.stagger-children.revealed > *:nth-child(2) { animation: slideUp 0.45s 0.12s ease forwards; }
+.stagger-children.revealed > *:nth-child(3) { animation: slideUp 0.45s 0.19s ease forwards; }
+.stagger-children.revealed > *:nth-child(4) { animation: slideUp 0.45s 0.26s ease forwards; }
+.stagger-children.revealed > *:nth-child(5) { animation: slideUp 0.45s 0.33s ease forwards; }
+.stagger-children.revealed > *:nth-child(6) { animation: slideUp 0.45s 0.40s ease forwards; }
+.stagger-children.revealed > *:nth-child(n+7) { animation: slideUp 0.45s 0.47s ease forwards; }
+
+/* Skeleton shimmer */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-bg-tertiary) 25%,
+    var(--color-bg-hover)    50%,
+    var(--color-bg-tertiary) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-md);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

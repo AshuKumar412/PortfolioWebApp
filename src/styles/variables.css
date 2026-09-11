@@ -1,0 +1,165 @@
+/* ================================================
+   CSS Custom Properties — Portfolio Design System
+   ================================================ */
+
+/* --- Dark Theme (default) --- */
+[data-theme="dark"] {
+  /* Backgrounds */
+  --color-bg-primary: #080810;
+  --color-bg-secondary: #0f0f1a;
+  --color-bg-tertiary: #17172a;
+  --color-bg-card: #1a1a2e;
+  --color-bg-hover: #20203a;
+
+  /* Accent — Indigo */
+  --color-accent: #6366f1;
+  --color-accent-light: #818cf8;
+  --color-accent-dark: #4f46e5;
+  --color-accent-subtle: rgba(99, 102, 241, 0.12);
+  --color-accent-glow: rgba(99, 102, 241, 0.25);
+
+  /* Text */
+  --color-text-primary: #f1f1f8;
+  --color-text-secondary: #a0a0bc;
+  --color-text-muted: #6b6b8a;
+
+  /* Borders */
+  --color-border: rgba(255, 255, 255, 0.07);
+  --color-border-hover: rgba(255, 255, 255, 0.15);
+
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.6);
+  --shadow-accent: 0 4px 20px rgba(99, 102, 241, 0.3);
+
+  /* Glass */
+  --glass-bg: rgba(255, 255, 255, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-backdrop: blur(12px);
+
+  /* Status */
+  --color-success: #34d399;
+  --color-success-subtle: rgba(52, 211, 153, 0.12);
+  --color-warning: #fbbf24;
+  --color-warning-subtle: rgba(251, 191, 36, 0.12);
+  --color-danger: #f87171;
+  --color-danger-subtle: rgba(248, 113, 113, 0.12);
+  --color-info: #60a5fa;
+  --color-info-subtle: rgba(96, 165, 250, 0.12);
+
+  /* Navbar */
+  --nav-bg: rgba(8, 8, 16, 0.85);
+}
+
+/* --- Light Theme --- */
+[data-theme="light"] {
+  --color-bg-primary: #fafafa;
+  --color-bg-secondary: #f3f3f8;
+  --color-bg-tertiary: #eaeaf3;
+  --color-bg-card: #ffffff;
+  --color-bg-hover: #f0f0fb;
+
+  --color-accent: #4f46e5;
+  --color-accent-light: #6366f1;
+  --color-accent-dark: #3730a3;
+  --color-accent-subtle: rgba(79, 70, 229, 0.08);
+  --color-accent-glow: rgba(79, 70, 229, 0.2);
+
+  --color-text-primary: #1a1a2e;
+  --color-text-secondary: #4b4b6e;
+  --color-text-muted: #8080a0;
+
+  --color-border: rgba(0, 0, 0, 0.08);
+  --color-border-hover: rgba(0, 0, 0, 0.18);
+
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 40px rgba(0, 0, 0, 0.12);
+  --shadow-accent: 0 4px 20px rgba(79, 70, 229, 0.2);
+
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --glass-backdrop: blur(12px);
+
+  --color-success: #059669;
+  --color-success-subtle: rgba(5, 150, 105, 0.1);
+  --color-warning: #d97706;
+  --color-warning-subtle: rgba(217, 119, 6, 0.1);
+  --color-danger: #dc2626;
+  --color-danger-subtle: rgba(220, 38, 38, 0.1);
+  --color-info: #2563eb;
+  --color-info-subtle: rgba(37, 99, 235, 0.1);
+
+  --nav-bg: rgba(250, 250, 250, 0.88);
+}
+
+/* --- Shared/Invariant variables --- */
+:root {
+  /* Typography scale using clamp for fluid sizing */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+
+  --text-xs:   clamp(0.70rem, 0.65rem + 0.25vw, 0.75rem);
+  --text-sm:   clamp(0.8rem,  0.75rem + 0.3vw,  0.875rem);
+  --text-base: clamp(0.9rem,  0.85rem + 0.35vw, 1rem);
+  --text-md:   clamp(1rem,    0.95rem + 0.4vw,  1.125rem);
+  --text-lg:   clamp(1.15rem, 1rem + 0.7vw,     1.25rem);
+  --text-xl:   clamp(1.3rem,  1.1rem + 0.9vw,   1.5rem);
+  --text-2xl:  clamp(1.5rem,  1.2rem + 1.3vw,   2rem);
+  --text-3xl:  clamp(1.8rem,  1.4rem + 1.8vw,   2.5rem);
+  --text-4xl:  clamp(2.2rem,  1.6rem + 2.5vw,   3.5rem);
+  --text-5xl:  clamp(2.8rem,  2rem + 3.5vw,     5rem);
+
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+
+  /* Spacing */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* Layout */
+  --container-max: 1200px;
+  --container-pad: clamp(1rem, 5vw, 2rem);
+  --section-pad:   clamp(4rem, 8vw, 7rem);
+
+  /* Border radius */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  12px;
+  --radius-xl:  16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-fast:   150ms ease;
+  --transition-base:   250ms ease;
+  --transition-slow:   400ms ease;
+  --transition-theme:  300ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Z-indexes */
+  --z-below:   -1;
+  --z-base:     0;
+  --z-card:     10;
+  --z-dropdown: 100;
+  --z-sticky:   200;
+  --z-overlay:  300;
+  --z-modal:    400;
+  --z-toast:    500;
+}
