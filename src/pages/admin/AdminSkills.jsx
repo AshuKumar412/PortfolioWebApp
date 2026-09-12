@@ -109,7 +109,7 @@ export function AdminSkills() {
               <label className="form-label">Category</label>
 <input className="form-input" value={form.category} onChange={fc('category')} placeholder="Enter category" />
 
-              </select>
+
             </div>
           </div>
           <div className="admin-form-row">
@@ -136,8 +136,14 @@ export function AdminSkills() {
         </form>
       </Modal>
 
-      <ConfirmDialog isOpen={!!deleting} onClose={() => setDeleting(null)} onConfirm={handleDelete}
-        title="Delete Skill?" message={`"${deleting?.name}" will be removed.`} />
+      <ConfirmDialog
+  isOpen={!!deleting}
+  onClose={() => setDeleting(null)}
+  onConfirm={handleDelete}
+  title="Delete Skill?"
+  message={`${deleting?.name} will be removed.`}
+/>
+
     </div>
   );
 }
