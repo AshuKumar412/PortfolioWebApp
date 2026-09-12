@@ -108,7 +108,7 @@ export function AdminSkills() {
             <div className="form-group">
               <label className="form-label">Category</label>
 <input className="form-input" value={form.category} onChange={fc('category')} placeholder="Enter category" />
-                {CATEGORIES.map(c => <option key={c} value={c}>{c}</option>)}
+
               </select>
             </div>
           </div>

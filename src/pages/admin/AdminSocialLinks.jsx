@@ -83,8 +83,8 @@ export function AdminSocialLinks() {
           <div className="form-group">
             <label className="form-label">Platform *</label>
             <input className="form-input" value={form.platform} onChange={fc('platform')} placeholder="Enter platform..." />
-              {PLATFORMS.map(p => <option key={p} value={p}>{p}</option>)}
-            </select>
+
+
           </div>
           <div className="form-group">
             <label className="form-label">URL *</label>
