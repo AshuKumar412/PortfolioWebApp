@@ -212,6 +212,10 @@ CREATE POLICY "social_links_admin_all"
   USING (public.is_admin())
   WITH CHECK (public.is_admin());
 
+
+
+
+
 -- 14. CONTACT MESSAGES Policies
 DROP POLICY IF EXISTS "contact_anon_insert"          ON public.contact_messages;
 DROP POLICY IF EXISTS "contact_messages: public insert" ON public.contact_messages;
