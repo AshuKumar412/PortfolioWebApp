@@ -1,3 +1,4 @@
+// BUILD_VERSION: 2026-09-12-01
 import { useState } from 'react';
 import { useCrud } from '../../hooks/useCrud';
 import { certificationsService } from '../../services/certificationsService';
@@ -45,8 +46,11 @@ export function AdminCertifications() {
     e.preventDefault();
     setSaving(true);
     try {
-      if (editing) await update(editing.id, form);
-      else await create(form);
+      // Sanitize payload to avoid sending empty strings for optional fields
+      const { sanitizePayload } = await import('../../utils/supabaseSanitizer');
+      const payload = sanitizePayload('certifications', form);
+      if (editing) await update(editing.id, payload);
+      else await create(payload);
       toast.success(editing ? 'Updated' : 'Added');
       setModal(false);
     } catch (err) { toast.error(err.message); }
